@@ -1,0 +1,60 @@
+<!-- <div class="h-100 d-flex align-items-center justify-content-center">
+  <countdown #cd [config]="{ leftTime: 5, demand: true, format: 'mm:ss' }" (event)="onCountdownEvent($event)"></countdown>
+  <ng-container *ngIf="!isDone; else doneTemplate">
+    
+    <button (click)="cd.begin()">start</button>
+    <button (click)="cd.pause()" >pause</button>
+    <button (click)="cd.restart()">reset</button>
+    <button (click)="cd.resume()">resume</button>
+  </ng-container>
+
+  <ng-template #doneTemplate>
+    <div>Done</div>
+  </ng-template>
+</div>
+
+
+ <countdown #cd [config]="{leftTime:300,demand:true,format:'mm:ss'}" (event)="handleEvent($event)"></countdown>
+    <div *ngIf="!isDone">Time: {{cd.config.leftTime}}</div>
+    <div *ngIf="isDone">Stop</div> -->
+ 
+ <!-- <div class="dive">
+  <countdown #cd [config]="{ leftTime: 300, demand: true, format: 'mm:ss' }" (event)="onCountdownEvent($event)"></countdown>
+
+  <div *ngIf="!isDone">
+
+    <button (click)="startTimer()">Start</button>
+    <button (click)="pauseTimer()" [disabled]="isPaused">Pause</button>
+    <button (click)="resetTimer()">Reset</button>
+    <button (click)="resumeTimer()" [disabled]="!isPaused">Resume</button>
+  </div>
+
+  <div *ngIf="isDone">
+    <div>Done</div>
+    <button (click)="resetTimer()">Reset</button>
+  </div>
+</div> -->
+
+<div id="div">
+  <div class="container-fluid h-100 contaner">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-md-6 dive text-center mt-3">
+        <div id="countdown" class="countdown-wrapper">
+          <countdown #cd [config]="{ leftTime: 5, demand: true, format: 'mm:ss' }" (event)="onCountdownEvent($event)"></countdown>
+        </div>
+
+        <div *ngIf="!isDone" class="text-center mt-3">
+          <button class="btn btn-primary" (click)="startTimer()">Start</button>
+          <button class="btn btn-secondary" (click)="pauseTimer()" [disabled]="isPaused">Pause</button>
+          <button class="btn btn-danger" (click)="resetTimer()">Reset</button>
+          <button class="btn btn-success" (click)="resumeTimer()" [disabled]="!isPaused">Resume</button>
+        </div>
+
+        <div *ngIf="isDone" class="text-center mt-3">
+          <div class="alert alert-success">Done</div>
+          <button class="btn btn-warning" (click)="resetTimer()">Reset</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
